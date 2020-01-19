@@ -10,7 +10,20 @@ import (
 const PYTHON_FILE_NAME = "neopixel-interface.py"
 
 func main() {
-	cmd := exec.Command("python", PYTHON_FILE_NAME, "4", "100", "100", "255", "0.3")
+	pixelShow(3, "255", "255", "10", "0.4")
+	pixelShow(4, "255", "255", "10", "0.4")
+	pixelShow(6, "255", "255", "10", "0.4")
+}
+
+func copyOutput(r io.Reader) {
+	scanner := bufio.NewScanner(r)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+}
+
+func pixelShow(pixelIndex int, red string, green string, blue string, opacity string) {
+	cmd := exec.Command("python", PYTHON_FILE_NAME, string(pixelIndex), red, green, blue, opacity)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		panic(err)
@@ -27,11 +40,4 @@ func main() {
 	go copyOutput(stdout)
 	go copyOutput(stderr)
 	cmd.Wait()
-}
-
-func copyOutput(r io.Reader) {
-	scanner := bufio.NewScanner(r)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
 }
