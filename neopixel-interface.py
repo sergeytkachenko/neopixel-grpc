@@ -1,6 +1,7 @@
 import time
 import board
 import neopixel
+import sys
 
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
@@ -29,7 +30,6 @@ time.sleep(1)
 
 # Comment this line out if you have RGBW/GRBW NeoPixels
 pixels.fill((0, 0, 255))
-pixels[15] = (0, 0, 0, 0.2)
-# Uncomment this line if you have RGBW/GRBW NeoPixels
+pixels[sys.argv[1]] = (sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
 # pixels.fill((0, 0, 255, 0))
 pixels.show()
