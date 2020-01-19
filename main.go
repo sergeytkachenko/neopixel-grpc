@@ -1,4 +1,4 @@
-package neopixel_grpc
+package main
 
 import (
 	"bufio"
