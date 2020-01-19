@@ -10,9 +10,9 @@ import (
 const PYTHON_FILE_NAME = "neopixel-interface.py"
 
 func main() {
-	pixelShow(3, "255", "255", "10", "0.4")
-	pixelShow(4, "255", "255", "10", "0.4")
-	pixelShow(6, "255", "255", "10", "0.4")
+	pixelShow("3", "255", "255", "10", "0.4")
+	pixelShow("4", "255", "255", "10", "0.4")
+	pixelShow("6", "255", "255", "10", "0.4")
 }
 
 func copyOutput(r io.Reader) {
@@ -22,7 +22,7 @@ func copyOutput(r io.Reader) {
 	}
 }
 
-func pixelShow(pixelIndex int, red string, green string, blue string, opacity string) {
+func pixelShow(pixelIndex string, red string, green string, blue string, opacity string) {
 	cmd := exec.Command("python", PYTHON_FILE_NAME, string(pixelIndex), red, green, blue, opacity)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
