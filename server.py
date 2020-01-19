@@ -28,6 +28,7 @@ class MyHandler(BaseHTTPRequestHandler):
             pixels[index] = (red, green, blue)
 
         pixels.show()
+        pixels.setBrightness(0.7)
 
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
