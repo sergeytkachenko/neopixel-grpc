@@ -14,7 +14,7 @@ func main() {
 	setPixel("3", "255", "255", "10", "0.4")
 	setPixel("4", "255", "255", "10", "0.4")
 	setPixel("6", "255", "255", "10", "0.4")
-	showPixels()
+	showPixels("0.4")
 }
 
 func copyOutput(r io.Reader) {
@@ -44,8 +44,8 @@ func setPixel(pixelIndex string, red string, green string, blue string, opacity 
 	cmd.Wait()
 }
 
-func showPixels() {
-	cmd := exec.Command("python", PYTHON_NEOPIXEL_SHOW_INTERFACE_FILE)
+func showPixels(opacity string) {
+	cmd := exec.Command("python", PYTHON_NEOPIXEL_SHOW_INTERFACE_FILE, opacity)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		panic(err)
