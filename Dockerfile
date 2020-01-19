@@ -1,4 +1,4 @@
-FROM golang:1.14beta1-alpine3.11 as gobuild
+FROM golang:rc-alpine3.11 as gobuild
 WORKDIR /app
 COPY main.go main.go
 RUN go build main.go
