@@ -10,7 +10,7 @@ import (
 const PYTHON_FILE_NAME = "neopixel-interface.py"
 
 func main() {
-	cmd := exec.Command("python3", PYTHON_FILE_NAME)
+	cmd := exec.Command("python", PYTHON_FILE_NAME)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		panic(err)
