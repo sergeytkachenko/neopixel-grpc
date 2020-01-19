@@ -61,3 +61,7 @@ docker run --rm -it --name neopixel-interface --privileged -p 80:80 neopixel-int
 ### GPIO 
 
 ![alt text](./docs/example3.jpg) 
+
+### Links
+
+* https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel/blob/9e30278fc9fec09f1a4677271e8be3fa266e03c6/neopixel.py
