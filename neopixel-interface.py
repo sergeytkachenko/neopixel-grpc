@@ -30,6 +30,6 @@ time.sleep(1)
 
 # Comment this line out if you have RGBW/GRBW NeoPixels
 pixels.fill((0, 0, 255))
-pixels[sys.argv[1]] = (sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+pixels[int(sys.argv[1])] = (int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), float(sys.argv[5]))
 # pixels.fill((0, 0, 255, 0))
 pixels.show()
