@@ -5,11 +5,11 @@
 ### Build
 
 ```
-docker build -f Dockerfile -t neopixel-grpc .
+docker build -f install/python/Dockerfile -t neopixel-interface .
 ```
 
 ### Run 
 
 ```
-docker run --rm -it --name neopixel-grpc --privileged -p 8085:80 neopixel-grpc
+docker run --rm -it --name neopixel-interface --privileged -p 80:80 neopixel-interface
 ```
