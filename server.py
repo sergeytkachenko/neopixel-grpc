@@ -7,6 +7,8 @@ import neopixel
 pixel_pin = board.D18
 num_pixels = 16
 ORDER = neopixel.GRB
+opacity = 0.3
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=opacity, auto_write=False, pixel_order=ORDER)
 
 HOST_NAME = '0.0.0.0'
 PORT_NUMBER = 80
@@ -17,8 +19,6 @@ class MyHandler(BaseHTTPRequestHandler):
         self.data_string = self.rfile.read(int(self.headers['Content-Length']))
         data = simplejson.loads(self.data_string)
         print(data['pixels'])
-        opacity = float(data['opacity'])
-        pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=opacity, auto_write=False, pixel_order=ORDER)
 
         for pixel in data['pixels']:
             index = int(pixel['index'])
