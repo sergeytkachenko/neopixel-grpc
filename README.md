@@ -57,3 +57,7 @@ docker run --rm -it --name neopixel-interface --privileged -p 80:80 neopixel-int
 ```POST to http://localhost:80/clear with empty BODY ```
 
 ![alt text](./docs/example2.jpg) 
+
+### GPIO 
+
+![alt text](./docs/example3.jpg) 
