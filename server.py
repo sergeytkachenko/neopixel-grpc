@@ -18,6 +18,8 @@ class MyHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/':
             self.setPixels()
+        if self.path == '/clear':
+            self.clearPixels()
 
     def setPixels(self):
         self.data_string = self.rfile.read(int(self.headers['Content-Length']))
@@ -31,6 +33,15 @@ class MyHandler(BaseHTTPRequestHandler):
             blue = int(pixel['b'])
             pixels[index] = (red, green, blue)
 
+        pixels.show()
+
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        self.wfile.write(bytes('{"success": true}'.encode("UTF-8")))
+
+    def clearPixels(self):
+        pixels.fill(0, 0, 0)
         pixels.show()
 
         self.send_response(200)
