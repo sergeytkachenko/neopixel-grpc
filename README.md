@@ -1,4 +1,4 @@
-# neopixel-grpc
+# neopixel-http
 
 ## Docker 
 
