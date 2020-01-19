@@ -1,4 +1,5 @@
-FROM python:3.9.0a2-alpine3.10
+FROM python:3
+RUN pip3 install adafruit-circuitpython-neopixel
 WORKDIR /app
 COPY neopixel-interface.py neopixel-interface.py
 ENTRYPOINT ["python", "neopixel-interface.py"]
