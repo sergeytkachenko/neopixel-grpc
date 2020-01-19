@@ -16,6 +16,10 @@ PORT_NUMBER = 80
 class MyHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
+        if self.path == '/':
+            self.setPixels()
+
+    def setPixels(self):
         self.data_string = self.rfile.read(int(self.headers['Content-Length']))
         data = simplejson.loads(self.data_string)
         print(data['pixels'])
