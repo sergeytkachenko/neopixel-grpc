@@ -30,7 +30,7 @@ time.sleep(1)
 
 # Comment this line out if you have RGBW/GRBW NeoPixels
 #pixels.fill((0, 0, 255))
-COLOR = (int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), float(sys.argv[5]))
+COLOR = (int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
 PIXEL_INDEX = int(sys.argv[1])
 print(COLOR)
 pixels[PIXEL_INDEX] = COLOR
