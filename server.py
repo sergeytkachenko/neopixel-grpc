@@ -41,7 +41,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.wfile.write(bytes('{"success": true}'.encode("UTF-8")))
 
     def clearPixels(self):
-        pixels.fill(0, 0, 0)
+        pixels.fill((0, 0, 0))
         pixels.show()
 
         self.send_response(200)
