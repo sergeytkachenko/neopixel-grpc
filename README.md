@@ -54,4 +54,6 @@ docker run --rm -it --name neopixel-interface --privileged -p 80:80 neopixel-int
 #### Clear all pixels
 
 
-```POST to http://localhost:80/clear with empty BODY ``` 
+```POST to http://localhost:80/clear with empty BODY ```
+
+![alt text](./docs/example2.jpg) 
