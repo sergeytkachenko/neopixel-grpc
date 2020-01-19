@@ -1,5 +1,8 @@
 # neopixel-http
 
+This interface allows you to interact with neopixel led like https://www.adafruit.com/product/1463 
+using only high-level http queries, that running in Docker container. 
+
 ## Docker 
 
 ### Build
