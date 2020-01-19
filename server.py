@@ -19,8 +19,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.data_string = self.rfile.read(int(self.headers['Content-Length']))
         data = simplejson.loads(self.data_string)
         print(data['pixels'])
-        opacity = float(data['opacity'])
-        pixels.brightness(opacity)
+        pixels.brightness = float(data['opacity'])
         for pixel in data['pixels']:
             index = int(pixel['index'])
             red = int(pixel['r'])
