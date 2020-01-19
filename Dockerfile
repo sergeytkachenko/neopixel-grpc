@@ -6,6 +6,7 @@ RUN go build main.go
 FROM python:3
 RUN pip3 install adafruit-circuitpython-neopixel RPi.GPIO rpi-ws281x
 WORKDIR /app
-COPY neopixel-interface.py neopixel-interface.py
+COPY neopixel-set-interface.py neopixel-set-interface.py
+COPY neopixel-show-interface.py neopixel-show-interface.py
 COPY --from=gobuild /app/main main
 ENTRYPOINT ["./main"]
